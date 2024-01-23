@@ -1,8 +1,8 @@
 /* Root variables */
 
 :root {
-  --font-family: Inter, 'Gidole', sans-serif;
-  --accent-font-family: 'Press Start 2P', 'Lutsk Sity';
+  --font-family: Inter, sans-serif;
+  --accent-font-family: 'Press Start 2P', fantasy;
   --heart-color: #ff0000;
 }
 
@@ -22,24 +22,26 @@
     --header-background: var(--page-background);
     --text-color: #000;
     --accent-color: rgba(0, 0, 0, 0.6);
+    --outline-color: var(--text-color);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --page-background: #000;
-      --background-color: #000;
-      --background-color-start: #007f0c;
-      --background-color-end: #004306;
-      --font-weight-title: "wght" 785;
-      --font-weight-text: "wght" 465;
-      --background-image: 
-        repeating-linear-gradient(90deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
-        repeating-linear-gradient(180deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
-        repeating-linear-gradient(180deg, var(--background-color-start) 0.01%, var(--background-color-end)),
-        linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
-      --header-background: var(--page-background);
-      --text-color: #00cc14;
-      --accent-color: rgba(0, 204, 20, 0.6);
+    --background-color: #000;
+    --background-color-start: #007f0c;
+    --background-color-end: #004306;
+    --font-weight-title: "wght" 785;
+    --font-weight-text: "wght" 465;
+    --background-image: 
+      repeating-linear-gradient(90deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+      repeating-linear-gradient(180deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+      repeating-linear-gradient(180deg, var(--background-color-start) 0.01%, var(--background-color-end)),
+      linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
+    --header-background: var(--page-background);
+    --text-color: #00cc14;
+    --accent-color: rgba(0, 204, 20, 0.6);
+    --outline-color: var(--text-color);
   }
 }
