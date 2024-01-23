@@ -11,6 +11,7 @@ $header-background: var(--header-background);
 $heart-color: var(--heart-color);
 $text-color: var(--text-color);
 $accent-color: var(--accent-color);
+$outline-color: var(--outline-color);
 
 /* mixin for Accent font family*/
 @mixin PressStart2PFont($fs) {
@@ -19,14 +20,102 @@ $accent-color: var(--accent-color);
 }
 
 .page {
-  font-variation-settings: var(--font-family, sans-serif);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background-image: var(--background-image);
+  background-image: $background-image;
   background-size: cover;
   background-attachment: fixed;  
+  color: $text-color;
+  font-family: $accent-font-family;
+  font-variation-settings: $font-weight-text;
 }
 
-body {
-  font-family: var(--font-family), sans-serif;
+/* header */
+.header {
+
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 100px 0;
+  padding-top: 136px;
+  background-color: $header-background; 
+  margin-inline: auto;
+  outline: 2px solid $outline-color;
+  
+  &__link {
+    font-size: 65px; //TODO
+    outline: none;
+  }
+  
+  &__title {
+    font-size: 23px; //TODO
+    margin: 20px 0 25px;
+  }
+}
+
+.theme-menu {
+  &__list {
+    font-size: 14px; //TODO
+    display: grid;
+    gap: 13px;
+    margin-left: 20px;
+    margin-bottom: 22px;    
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__button {
+    padding: 0;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.6;
+      pointer-events: none;
+
+      &::before {
+        content: "▶";
+        position: absolute;
+        left: -20px;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      opacity: 0.6;
+      background-color: $text-color;
+      block-size: 2px;
+      transform-origin: left;
+      inline-size: 100%;
+      transform: translateX(-101%);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    } 
+
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:focus-visible {
+      opacity: 0.6;
+
+      &::after {
+        transform: translateX(0);
+      }
+    }
+  }
 }
