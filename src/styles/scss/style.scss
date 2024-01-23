@@ -1,0 +1,58 @@
+/* Style */
+
+$accent-font-family: var(--accent-font-family);
+$page-background: var(--page-background);
+$background-color: var(--background-color);
+$background-color-start: var(--background-color-start);
+$background-color-end: var(--background-color-end);
+$font-weight-title: var(--font-weight-title);
+$font-weight-text: var(--font-weight-text);
+$background-image: var(--background-image);
+$header-background: var(--header-background);
+$heart-color: var(--heart-color);
+$text-color: var(--text-color);
+$accent-color: var(--accent-color);
+
+/* mixin for Accent font family*/
+@mixin PressStart2PFont($fs) {
+  font-family: $accent-font-family;
+  font-size: $fs;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  color: var(--text-color, #000);
+  background-color: var(--background-color, rgba(0, 0, 0, 0.6));
+  background-image: var(--background-image, url('../images/light-background.png'));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;  
+}
+
+body {
+  font-family: var(--font-family), sans-serif;
+}

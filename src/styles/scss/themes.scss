@@ -1,0 +1,31 @@
+/* Theme variables */
+
+:root {
+  &.theme {
+    &-light {
+      --page-background: #fff;
+      --background-color: var(--background-color);
+      --background-color-start: #e7e7e7;
+      --background-color-end: #1a1a1a ;
+      --font-weight-title: "wght" 700;
+      --font-weight-text: "wght" 400;
+      --background-image: url('../images/light-background.png');
+      --header-background: var(--page-background);
+      --text-color: #000;
+      --accent-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &-dark {
+      --page-background: #000;
+      --background-color: var(--background-color);
+      --background-color-start: #007f0c;
+      --background-color-end: #004306;
+      --font-weight-title: "wght" 785;
+      --font-weight-text: "wght" 465;
+      --background-image: url('../images/dark-background.png');
+      --header-background: var(--page-background);
+      --text-color: #00cc14;
+      --accent-color: rgba(0, 204, 20, 0.6);
+    }
+  }
+}
