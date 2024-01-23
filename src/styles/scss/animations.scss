@@ -1,1 +1,21 @@
 /* Animation */
+
+@keyframes arrow-anim {
+  from {
+    left: -20px;
+  }
+  to {
+    left: -16px;
+  }
+}
+
+.theme-menu {
+  &__button {
+    &:disabled {
+      &::before {
+        -webkit-animation: arrow-anim 0.5s ease-in-out infinite alternate;
+        animation: arrow-anim 0.5s ease-in-out infinite alternate;
+      }
+    }
+  }
+}
