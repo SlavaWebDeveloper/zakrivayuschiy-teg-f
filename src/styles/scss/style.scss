@@ -1,5 +1,4 @@
 /* Style */
-
 $accent-font-family: var(--accent-font-family);
 $page-background: var(--page-background);
 $background-color: var(--background-color);
@@ -19,36 +18,11 @@ $accent-color: var(--accent-color);
   font-size: $fs;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .page {
+  font-variation-settings: var(--font-family, sans-serif);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  color: var(--text-color, #000);
-  background-color: var(--background-color, rgba(0, 0, 0, 0.6));
-  background-image: var(--background-image, url('../images/light-background.png'));
-  background-repeat: no-repeat;
+  background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;  
 }
