@@ -193,6 +193,11 @@ $mix-blend-color: var(--mix-blend-color);
   inline-size: 21px;
   block-size: 21px;
   mix-blend-mode: difference;
+
+  @media (width < 376px) {
+    inline-size: 28px;
+    block-size: 28px;
+  }
 }
 
 /* cards */
@@ -271,7 +276,7 @@ $mix-blend-color: var(--mix-blend-color);
     
     &-container{
       display: grid;
-      grid-template-columns: 1fr 234px;
+      grid-template-columns: 1fr clamp(12.5rem, 11.752rem + 3.19vw, 14.625rem);
       align-items: center;
       gap: 20px;
     }
@@ -294,6 +299,10 @@ $mix-blend-color: var(--mix-blend-color);
         text-transform: uppercase;
       }
     }   
+  }
+
+  @media (width < 376px) {
+    padding: 32px 42px;
   }
 
   @media (width < 700px) {
