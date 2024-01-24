@@ -1,0 +1,48 @@
+/* Root variables */
+:root {
+  --font-family: Inter, sans-serif;
+  --accent-font-family: "Press Start 2P", fantasy;
+  --heart-color: #ff0000;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --page-background: #fff;
+    --background-color: #d3d3d3;
+    --background-color-start: #e7e7e7;
+    --background-color-end: #1a1a1a ;
+    --font-weight-title: "wght" 700;
+    --font-weight-text: "wght" 400;
+    --background-image:
+      repeating-linear-gradient(90deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+      repeating-linear-gradient(180deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+      repeating-linear-gradient(180deg, var(--background-color-start) 0.01%, var(--background-color-end)),
+      linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
+    --header-background: var(--page-background);
+    --text-color: #000;
+    --mix-blend-color: var(--page-background);
+    --border-color: var(--text-color);
+    --text-stroke-color: #fff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: #000;
+    --background-color: #000;
+    --background-color-start: #007f0c;
+    --background-color-end: #004306;
+    --font-weight-title: "wght" 785;
+    --font-weight-text: "wght" 465;
+    --background-image:
+      repeating-linear-gradient(90deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+      repeating-linear-gradient(180deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+      repeating-linear-gradient(180deg, var(--background-color-start) 0.01%, var(--background-color-end)),
+      linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
+    --header-background: var(--page-background);
+    --text-color: #00cc14;
+    --mix-blend-color: var(--text-color);
+    --border-color: var(--text-color);
+    --text-stroke-color: #000;
+  }
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhcmlhYmxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBRUE7RUFDRTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7SUFDRTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0lBS0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTs7O0FBSUo7RUFDRTtJQUNFO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0FBQUE7QUFBQTtBQUFBO0FBQUE7SUFLQTtJQUNBO0lBQ0E7SUFDQTtJQUNBIiwiZmlsZSI6InZhcmlhYmxlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBSb290IHZhcmlhYmxlcyAqL1xyXG5cclxuOnJvb3Qge1xyXG4gIC0tZm9udC1mYW1pbHk6IEludGVyLCBzYW5zLXNlcmlmO1xyXG4gIC0tYWNjZW50LWZvbnQtZmFtaWx5OiAnUHJlc3MgU3RhcnQgMlAnLCBmYW50YXN5O1xyXG4gIC0taGVhcnQtY29sb3I6ICNmZjAwMDA7XHJcbn1cclxuXHJcbkBtZWRpYSAocHJlZmVycy1jb2xvci1zY2hlbWU6IGxpZ2h0KSB7XHJcbiAgOnJvb3Qge1xyXG4gICAgLS1wYWdlLWJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICAtLWJhY2tncm91bmQtY29sb3I6ICNkM2QzZDM7XHJcbiAgICAtLWJhY2tncm91bmQtY29sb3Itc3RhcnQ6ICNlN2U3ZTc7XHJcbiAgICAtLWJhY2tncm91bmQtY29sb3ItZW5kOiAjMWExYTFhIDtcclxuICAgIC0tZm9udC13ZWlnaHQtdGl0bGU6IFwid2dodFwiIDcwMDtcclxuICAgIC0tZm9udC13ZWlnaHQtdGV4dDogXCJ3Z2h0XCIgNDAwO1xyXG4gICAgLS1iYWNrZ3JvdW5kLWltYWdlOiBcclxuICAgICAgcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCg5MGRlZywgdmFyKC0tYmFja2dyb3VuZC1jb2xvciksIHZhcigtLWJhY2tncm91bmQtY29sb3IpIDJweCwgdHJhbnNwYXJlbnQgMnB4LCB0cmFuc3BhcmVudCA0cHgpLFxyXG4gICAgICByZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDE4MGRlZywgdmFyKC0tYmFja2dyb3VuZC1jb2xvciksIHZhcigtLWJhY2tncm91bmQtY29sb3IpIDJweCwgdHJhbnNwYXJlbnQgMnB4LCB0cmFuc3BhcmVudCA0cHgpLFxyXG4gICAgICByZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDE4MGRlZywgdmFyKC0tYmFja2dyb3VuZC1jb2xvci1zdGFydCkgMC4wMSUsIHZhcigtLWJhY2tncm91bmQtY29sb3ItZW5kKSksXHJcbiAgICAgIGxpbmVhci1ncmFkaWVudCh0byBib3R0b20sIHZhcigtLWJhY2tncm91bmQtY29sb3Itc3RhcnQpLCB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWVuZCkpO1xyXG4gICAgLS1oZWFkZXItYmFja2dyb3VuZDogdmFyKC0tcGFnZS1iYWNrZ3JvdW5kKTtcclxuICAgIC0tdGV4dC1jb2xvcjogIzAwMDtcclxuICAgIC0tbWl4LWJsZW5kLWNvbG9yOiB2YXIoLS1wYWdlLWJhY2tncm91bmQpO1xyXG4gICAgLS1ib3JkZXItY29sb3I6IHZhcigtLXRleHQtY29sb3IpO1xyXG4gICAgLS10ZXh0LXN0cm9rZS1jb2xvcjogI2ZmZjtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSAocHJlZmVycy1jb2xvci1zY2hlbWU6IGRhcmspIHtcclxuICA6cm9vdCB7XHJcbiAgICAtLXBhZ2UtYmFja2dyb3VuZDogIzAwMDtcclxuICAgIC0tYmFja2dyb3VuZC1jb2xvcjogIzAwMDtcclxuICAgIC0tYmFja2dyb3VuZC1jb2xvci1zdGFydDogIzAwN2YwYztcclxuICAgIC0tYmFja2dyb3VuZC1jb2xvci1lbmQ6ICMwMDQzMDY7XHJcbiAgICAtLWZvbnQtd2VpZ2h0LXRpdGxlOiBcIndnaHRcIiA3ODU7XHJcbiAgICAtLWZvbnQtd2VpZ2h0LXRleHQ6IFwid2dodFwiIDQ2NTtcclxuICAgIC0tYmFja2dyb3VuZC1pbWFnZTogXHJcbiAgICAgIHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoOTBkZWcsIHZhcigtLWJhY2tncm91bmQtY29sb3IpLCB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yKSAycHgsIHRyYW5zcGFyZW50IDJweCwgdHJhbnNwYXJlbnQgNHB4KSxcclxuICAgICAgcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCgxODBkZWcsIHZhcigtLWJhY2tncm91bmQtY29sb3IpLCB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yKSAycHgsIHRyYW5zcGFyZW50IDJweCwgdHJhbnNwYXJlbnQgNHB4KSxcclxuICAgICAgcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCgxODBkZWcsIHZhcigtLWJhY2tncm91bmQtY29sb3Itc3RhcnQpIDAuMDElLCB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWVuZCkpLFxyXG4gICAgICBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLXN0YXJ0KSwgdmFyKC0tYmFja2dyb3VuZC1jb2xvci1lbmQpKTtcclxuICAgIC0taGVhZGVyLWJhY2tncm91bmQ6IHZhcigtLXBhZ2UtYmFja2dyb3VuZCk7XHJcbiAgICAtLXRleHQtY29sb3I6ICMwMGNjMTQ7XHJcbiAgICAtLW1peC1ibGVuZC1jb2xvcjogdmFyKC0tdGV4dC1jb2xvcik7XHJcbiAgICAtLWJvcmRlci1jb2xvcjogdmFyKC0tdGV4dC1jb2xvcik7XHJcbiAgICAtLXRleHQtc3Ryb2tlLWNvbG9yOiAjMDAwO1xyXG4gIH1cclxufSJdfQ== */
