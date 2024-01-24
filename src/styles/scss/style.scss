@@ -470,3 +470,37 @@ $mix-blend-color: var(--mix-blend-color);
     }
   }
 }
+
+/* filter */
+.filter-grayscale {
+  filter: grayscale(0.8);
+}
+
+.filter-brightness {
+  filter: brightness(300%);
+} 
+
+.filter-contrast {
+  filter: contrast(20%);
+} 
+
+.filter-blur {
+  filter: blur(5px);
+} 
+
+.filter-opacity {
+  filter: opacity(0.4);
+} 
+
+.filter-saturate {
+  filter: saturate(150%);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.filter-mix {
+  filter: invert(0.6) saturate(30%) sepia(60%);
+}
+/* end filter */
