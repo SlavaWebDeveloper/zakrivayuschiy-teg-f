@@ -21,8 +21,9 @@
       linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
     --header-background: var(--page-background);
     --text-color: #000;
-    --accent-color: rgba(0, 0, 0, 0.6);
-    --outline-color: var(--text-color);
+    --mix-blend-color: var(--page-background);
+    --border-color: var(--text-color);
+    --text-stroke-color: #fff;
   }
 }
 
@@ -41,7 +42,8 @@
       linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
     --header-background: var(--page-background);
     --text-color: #00cc14;
-    --accent-color: rgba(0, 204, 20, 0.6);
-    --outline-color: var(--text-color);
+    --mix-blend-color: var(--text-color);
+    --border-color: var(--text-color);
+    --text-stroke-color: #000;
   }
 }
