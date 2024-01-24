@@ -1,11 +1,56 @@
 /* Animation */
 
+@-webkit-keyframes arrow-anim {
+  from {
+    left: -20px;
+  }
+  to {
+    left: -16px;
+  }
+}
+
 @keyframes arrow-anim {
   from {
     left: -20px;
   }
   to {
     left: -16px;
+  }
+}
+
+@-webkit-keyframes scale-anim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes scale-anim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@-webkit-keyframes sparks-flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sparks-flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -16,6 +61,21 @@
         -webkit-animation: arrow-anim 0.5s ease-in-out infinite alternate;
         animation: arrow-anim 0.5s ease-in-out infinite alternate;
       }
+    }
+  }
+}
+
+.like-icon { 
+  &.is-liked {
+    .heart {
+      transform-origin: center center;
+      -webkit-animation: scale-anim 0.3s ease-in 0.1s 1 alternate;
+      animation: scale-anim 0.3s ease-in 0.1s 1 alternate;
+    }
+    
+    .sparks {
+      -webkit-animation: sparks-flash 0.3s ease-in 0.3s 1 alternate;
+      animation: sparks-flash 0.3s ease-in 0.3s 1 alternate;
     }
   }
 }
