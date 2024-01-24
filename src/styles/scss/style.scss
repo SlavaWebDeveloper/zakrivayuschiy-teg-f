@@ -1,22 +1,24 @@
 /* Style */
 $accent-font-family: var(--accent-font-family);
 $page-background: var(--page-background);
-$background-color: var(--background-color);
-$background-color-start: var(--background-color-start);
-$background-color-end: var(--background-color-end);
 $font-weight-title: var(--font-weight-title);
 $font-weight-text: var(--font-weight-text);
 $background-image: var(--background-image);
-$header-background: var(--header-background);
 $heart-color: var(--heart-color);
 $text-color: var(--text-color);
-$accent-color: var(--accent-color);
-$outline-color: var(--outline-color);
+$border-color: var(--border-color);
+$text-stroke-color: var(--text-stroke-color);
+$mix-blend-color: var(--mix-blend-color);
 
 /* mixin for Accent font family*/
 @mixin PressStart2PFont($fs) {
   font-family: $accent-font-family;
   font-size: $fs;
+}
+
+/* Mixin for setting transitions */
+@mixin Transition($property, $duration, $timing-function: ease, $delay: 0s) {
+  transition: $property $duration $timing-function $delay;
 }
 
 .page {
@@ -26,32 +28,37 @@ $outline-color: var(--outline-color);
   background-size: cover;
   background-attachment: fixed;  
   color: $text-color;
-  font-family: $accent-font-family;
   font-variation-settings: $font-weight-text;
 }
 
 /* header */
 .header {
-
   display: grid;
   justify-items: center;
-  justify-content: center;
-  line-height: normal;
   text-transform: uppercase;
-  margin: 100px 0;
-  padding-top: 136px;
-  background-color: $header-background; 
-  margin-inline: auto;
-  outline: 2px solid $outline-color;
+  margin-top: 102px;
+  padding-top: clamp(7.5rem, 7.148rem + 1.5vw, 8.5rem);
+  background-color: $page-background;
+  outline: 2px solid $border-color;
   
   &__link {
-    font-size: 65px; //TODO
+    @include PressStart2PFont(clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem));
     outline: none;
+
+    @media (width < 375px) {
+      @include PressStart2PFont(clamp(2.5rem, -0.773rem + 16.36vw, 3.063rem));
+    }
   }
   
   &__title {
-    font-size: 23px; //TODO
+    @include PressStart2PFont(clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem));
     margin: 20px 0 25px;
+    font-weight: 400;
+  }
+
+  @media (width < 700px) {
+    outline: none;
+    border: 2px solid $border-color;
   }
 }
 
@@ -59,23 +66,25 @@ $outline-color: var(--outline-color);
   &__list {
     font-size: 14px; //TODO
     display: grid;
-    gap: 13px;
+    gap: 10px;
     margin-left: 20px;
     margin-bottom: 22px;    
   }
 
   &__item {
     position: relative;
+    display: inline-block;
   }
 
   &__button {
+    font-family: $accent-font-family;
     padding: 0;
     text-transform: uppercase;
     background: none;
     border: none;
     overflow: hidden;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    @include Transition(opacity, 0.3s);
     cursor: pointer;
 
     &:disabled {
@@ -98,7 +107,7 @@ $outline-color: var(--outline-color);
       transform-origin: left;
       inline-size: 100%;
       transform: translateX(-101%);
-      transition: transform 0.3s ease;
+      @include Transition(transform, 0.3s);
     }
 
     &:hover {
@@ -116,6 +125,339 @@ $outline-color: var(--outline-color);
       &::after {
         transform: translateX(0);
       }
+    }
+  }
+}
+
+/* section-main */
+
+.main {
+  margin: 104px 0;
+}
+
+.content {
+  &__list {
+    display: grid;
+    gap: 54px;
+  }
+}
+
+.article {
+  outline: 2px solid $border-color;
+  background-color: $page-background;
+
+  &__title {
+    padding: 4px 10px;  
+    
+    &-text{
+      font-variation-settings: $font-weight-title;
+      font-size: 18px;
+    }
+  }
+
+  &__img {
+    &-container {
+      position: relative;
+      border-top: 2px solid $border-color;
+      border-bottom: 2px solid $border-color;
+    }
+
+    &-content {
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 21px; /* 116.667% */
+    &:not(:first-of-type){
+      margin-top: 2px;
+    }
+    
+    &-container {
+      display: grid;
+      gap: 25px;
+      padding: 25px;
+    }
+  }
+
+  @media (width < 700px) {
+    outline: none;
+    border: 2px solid $border-color;
+  }
+}
+
+.floppy-image {
+  inline-size: 21px;
+  block-size: 21px;
+  mix-blend-mode: difference;
+}
+
+/* cards */
+.card {
+  &__like {
+    &-button {
+      min-inline-size: 130px;
+      padding: 9px 17px;
+      line-height: 90%; /* 12.6px */
+
+      &-container {
+        display: flex;
+        gap: 6px;
+        justify-self: end;
+      }
+    }
+  }
+
+  &__icon {
+    &-button {
+      padding: 0;
+      inline-size: 40px;
+      block-size: 36px;
+      background: transparent;
+      border: transparent solid 2px;
+      @include Transition(border, 0.3s);
+      cursor: pointer;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      &:focus-visible {
+        border: $text-color solid 2px;
+        @include Transition(border, 0.3s);
+      }
+    }
+  }
+}
+/* end cards */
+
+/* dialog */
+
+.dialog {
+  @include PressStart2PFont(14px);
+  padding: 30px 26px;
+  color: var(--text-color);
+  background: var(--page-background);
+  outline: 2px solid $border-color;
+
+  &:not[open] {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &::backdrop {
+    background: rgba(0 0 0 / 0.75);
+    pointer-events: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &__text{
+    color: $text-color;
+    @include PressStart2PFont(14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; /* 21px */
+    text-transform: uppercase;
+    cursor: default;
+    
+    &-container{
+      display: grid;
+      grid-template-columns: 1fr 234px;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__icon {
+    line-height: 39px;
+    block-size: 39px;
+  }
+
+  &__button{  
+    &-ok{
+      text-transform: uppercase;
+      inline-size: 100%;
+      padding: 10px 0;
+      
+      &-text {
+        @include PressStart2PFont(14px);
+        line-height: 0.9; /* 12.6px */
+        text-transform: uppercase;
+      }
+    }   
+  }
+
+  @media (width < 700px) {
+    outline: none;
+    border: 2px solid $border-color;
+  }
+}
+
+/* button */
+.button {
+  @include PressStart2PFont(14px);
+  position: relative;
+  overflow: hidden;
+  color: $mix-blend-color;
+  background: none;
+  border: 2px solid $border-color;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    display: block;
+    block-size: 100%;
+    inline-size: 100%;
+    overflow: hidden;
+    background: $text-color;
+    transform: translateX(-100%);
+    @include Transition(transform, 0.3s, ease-in-out);
+  }
+
+  &:hover {
+    &::before {
+      transform: translateX(0);
+    }
+  } 
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 2px 2px 0 0 $text-color;
+  }
+
+  &__text {
+    color: $mix-blend-color;
+    mix-blend-mode: difference;
+  }
+}
+
+.save-button{
+  padding: 15px 20px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: $page-background;
+
+  @media (width < 376px) {
+    flex-direction: column;    
+  }
+}
+/* end button */
+
+.image-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  cursor: default;
+  @include PressStart2PFont(14px);
+  font-variation-settings: $font-weight-text;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 
+    1px 0 $text-stroke-color, 
+    -1px 0 $text-stroke-color, 
+    0 1px $text-stroke-color, 
+    0 -1px $text-stroke-color;
+
+  @supports (
+    (text-stroke: 1px $text-stroke-color) or 
+      (-webkit-text-stroke: 1px $text-stroke-color)) {
+        text-shadow: none;
+        -webkit-text-stroke: 1px $text-stroke-color;
+        text-stroke: 1px $text-stroke-color;
+  }
+
+  @media (width < 376px) {
+    right: 11px;
+  }
+}
+
+/* like icon */
+.like-icon {
+  cursor: pointer;
+  fill: $text-color;
+
+  .heart {
+    transition: fill 0.1s;
+  }
+
+  .contour {
+    fill: $text-color;
+  }
+
+  .main-body {
+    fill: transparent;
+    @include Transition(fill, 0.3s, linear);
+  }
+
+  .core {
+    fill: $page-background;
+    @include Transition(fill, 0.3s, linear, 0.03s);
+  }
+
+  .sparks {
+    opacity: 0;
+  }
+  
+  /* hover */
+  &:not(.is-liked) {
+    &:hover {
+      .main-body{
+        fill: $text-color;
+        @include Transition(fill, 0.3s, linear, 0.05s);
+      }
+
+      .core {
+        fill: $text-color;
+        @include Transition(fill, 0.3s, linear);
+      }
+    } 
+
+    &:active {
+      .main-body{
+        fill: $heart-color;
+        @include Transition(fill, 0.3s, linear, 0.05s);
+      }
+  
+      .core {
+        fill: $heart-color;
+        @include Transition(fill, 0.3s, linear);
+        transition: fill 0.3s linear;
+      }
+    }
+  }  
+
+  &.is-liked {
+    .contour {
+      fill: $heart-color;
+      @include Transition(fill, 0.3s, linear, 0.06s);
+    }
+
+    .main-body {
+      fill: $heart-color;
+      @include Transition(fill, 0.3s, linear, 0.05s);
+    }
+
+    .core {
+      fill: $heart-color;
+      @include Transition(fill, 0.3s, linear);
     }
   }
 }
