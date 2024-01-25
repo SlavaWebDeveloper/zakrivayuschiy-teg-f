@@ -1,5 +1,5 @@
 node_modules/
-src/
+src
 gulpfile.js
 src/styles/css
 min-file
