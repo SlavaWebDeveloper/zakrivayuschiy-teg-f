@@ -237,7 +237,6 @@ $mix-blend-color: var(--mix-blend-color);
     }
   }
 }
-/* end cards */
 
 /* dialog */
 
@@ -367,7 +366,6 @@ $mix-blend-color: var(--mix-blend-color);
     flex-direction: column;    
   }
 }
-/* end button */
 
 .image-label {
   position: absolute;
@@ -376,7 +374,6 @@ $mix-blend-color: var(--mix-blend-color);
   z-index: 1;
   cursor: default;
   @include PressStart2PFont(14px);
-  font-variation-settings: $font-weight-text;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: 
@@ -425,8 +422,9 @@ $mix-blend-color: var(--mix-blend-color);
     opacity: 0;
   }
   
-  /* hover */
+  
   &:not(.is-liked) {
+    /* hover */
     &:hover {
       .main-body{
         fill: $text-color;
@@ -502,4 +500,3 @@ $mix-blend-color: var(--mix-blend-color);
 .filter-mix {
   filter: invert(0.6) saturate(30%) sepia(60%);
 }
-/* end filter */
