@@ -148,11 +148,8 @@ $mix-blend-color: var(--mix-blend-color);
 
   &__title {
     padding: 4px 10px;  
-    
-    &-text{
-      font-variation-settings: $font-weight-title;
-      font-size: 18px;
-    }
+    font-variation-settings: $font-weight-title;
+    font-size: 18px;
   }
 
   &__img {
