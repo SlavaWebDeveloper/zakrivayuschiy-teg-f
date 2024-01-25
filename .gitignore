@@ -2,4 +2,4 @@ node_modules/
 src/
 gulpfile.js
 src/styles/css
-min-file/
+min-file
