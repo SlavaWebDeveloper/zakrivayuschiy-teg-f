@@ -1,0 +1,43 @@
+/* Theme variables */
+
+:root {
+  &.theme {
+    &-light {
+      --page-background: #fff;
+      --background-color: #d3d3d3;
+      --background-color-start: #e7e7e7;
+      --background-color-end: #1a1a1a ;
+      --font-weight-title: "wght" 700;
+      --font-weight-text: "wght" 400;
+      --background-image: 
+        repeating-linear-gradient(90deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(180deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(180deg, var(--background-color-start) 0.01%, var(--background-color-end)),
+        linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
+      --header-background: var(--page-background);
+      --text-color: #000;
+      --mix-blend-color: var(--page-background);
+      --border-color: var(--text-color);
+      --text-stroke-color: #fff;
+    }
+
+    &-dark {
+      --page-background: #000;
+      --background-color: #000;
+      --background-color-start: #007f0c;
+      --background-color-end: #004306;
+      --font-weight-title: "wght" 785;
+      --font-weight-text: "wght" 465;
+      --background-image: 
+        repeating-linear-gradient(90deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(180deg, var(--background-color), var(--background-color) 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(180deg, var(--background-color-start) 0.01%, var(--background-color-end)),
+        linear-gradient(to bottom, var(--background-color-start), var(--background-color-end));
+      --header-background: var(--page-background);
+      --text-color: #00cc14;
+      --mix-blend-color: var(--text-color);
+      --border-color: var(--text-color);
+      --text-stroke-color: #000;
+    }
+  }
+}
