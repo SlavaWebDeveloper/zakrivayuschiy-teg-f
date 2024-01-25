@@ -152,18 +152,23 @@ $mix-blend-color: var(--mix-blend-color);
     font-size: 18px;
   }
 
-  &__img {
-    &-container {
-      position: relative;
-      border-top: 2px solid $border-color;
-      border-bottom: 2px solid $border-color;
-    }
+  @media (width < 700px) {
+    outline: none;
+    border: 2px solid $border-color;
+  }
+}
 
-    &-content {
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
+.figure {
+  position: relative;
+  border-top: 2px solid $border-color;
+  border-bottom: 2px solid $border-color;
+  margin: 0;
+  
+  &__img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
   }
 
   &__text {
@@ -178,11 +183,6 @@ $mix-blend-color: var(--mix-blend-color);
       gap: 25px;
       padding: 25px;
     }
-  }
-
-  @media (width < 700px) {
-    outline: none;
-    border: 2px solid $border-color;
   }
 }
 
