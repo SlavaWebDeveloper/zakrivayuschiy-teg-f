@@ -18,9 +18,15 @@
   justify-items: center;
   text-transform: uppercase;
   margin-top: 102px;
+  margin-bottom: 104px 0;
   padding-top: clamp(7.5rem, 7.148rem + 1.5vw, 8.5rem);
   background-color: var(--page-background, #fff);
   outline: 2px solid var(--border-color, #000);
+}
+@media (width < 376px) {
+  .header {
+    margin: 100px 0;
+  }
 }
 .header__link {
   font-family: var(--accent-font-family, "Press Start 2P");
@@ -75,6 +81,7 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
+  top: 0;
   left: -20px;
 }
 .theme-menu__button::after {
@@ -104,18 +111,10 @@
 
 /* section-main */
 .main {
-  margin: 104px 0;
-}
-@media (width < 376px) {
-  .main {
-    margin: 100px 0;
-  }
-}
-
-.content__list {
   display: grid;
   gap: 54px;
   margin-bottom: 54px;
+  margin: 104px 0;
 }
 
 .article {

@@ -37,9 +37,14 @@ $mix-blend-color: var(--mix-blend-color, #fff);
   justify-items: center;
   text-transform: uppercase;
   margin-top: 102px;
+  margin-bottom: 104px 0;
   padding-top: clamp(7.5rem, 7.148rem + 1.5vw, 8.5rem);
   background-color: $page-background;
   outline: 2px solid $border-color;
+
+  @media (width < 376px) {
+    margin: 100px 0;
+  }
   
   &__link {
     @include PressStart2PFont(clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem));
@@ -94,6 +99,7 @@ $mix-blend-color: var(--mix-blend-color, #fff);
       &::before {
         content: "▶";
         position: absolute;
+        top: 0;
         left: -20px;
       }
     }
@@ -132,19 +138,10 @@ $mix-blend-color: var(--mix-blend-color, #fff);
 /* section-main */
 
 .main {
+  display: grid;
+  gap: 54px;
+  margin-bottom: 54px;
   margin: 104px 0;
-
-  @media (width < 376px) {
-    margin: 100px 0;
-  }
-}
-
-.content {
-  &__list {
-    display: grid;
-    gap: 54px;
-    margin-bottom: 54px;
-  }
 }
 
 .article {
