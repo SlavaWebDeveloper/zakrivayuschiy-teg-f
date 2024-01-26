@@ -1,14 +1,14 @@
 /* Style */
-$accent-font-family: var(--accent-font-family);
-$page-background: var(--page-background);
-$font-weight-title: var(--font-weight-title);
-$font-weight-text: var(--font-weight-text);
+$accent-font-family: var(--accent-font-family, 'Press Start 2P');
+$page-background: var(--page-background, #fff);
+$font-weight-title: var(--font-weight-title, "wght" 700);
+$font-weight-text: var(--font-weight-text, "wght" 400);
 $background-image: var(--background-image);
-$heart-color: var(--heart-color);
-$text-color: var(--text-color);
-$border-color: var(--border-color);
-$text-stroke-color: var(--text-stroke-color);
-$mix-blend-color: var(--mix-blend-color);
+$heart-color: var(--heart-color, #ff0000);
+$text-color: var(--text-color, #000);
+$border-color: var(--border-color, #000);
+$text-stroke-color: var(--text-stroke-color, #fff);
+$mix-blend-color: var(--mix-blend-color, #fff);
 
 /* mixin for Accent font family*/
 @mixin PressStart2PFont($fs) {
@@ -102,7 +102,7 @@ $mix-blend-color: var(--mix-blend-color);
       content: "";
       display: block;
       opacity: 0.6;
-      background-color: $text-color;
+      background-color: $border-color;
       block-size: 2px;
       transform-origin: left;
       inline-size: 100%;
@@ -133,12 +133,17 @@ $mix-blend-color: var(--mix-blend-color);
 
 .main {
   margin: 104px 0;
+
+  @media (width < 376px) {
+    margin: 100px 0;
+  }
 }
 
 .content {
   &__list {
     display: grid;
     gap: 54px;
+    margin-bottom: 54px;
   }
 }
 
@@ -228,7 +233,7 @@ $mix-blend-color: var(--mix-blend-color);
       }
   
       &:focus-visible {
-        border: $text-color solid 2px;
+        border: $border-color solid 2px;
         @include Transition(border, 0.3s);
       }
     }
@@ -326,7 +331,7 @@ $mix-blend-color: var(--mix-blend-color);
     block-size: 100%;
     inline-size: 100%;
     overflow: hidden;
-    background: $text-color;
+    background: $border-color;
     transform: translateX(-100%);
     @include Transition(transform, 0.3s, ease-in-out);
   }
