@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--font-family, Inter), sans-serif;
   max-width: 696px;
   margin-inline: auto;
   margin: 0 auto;
