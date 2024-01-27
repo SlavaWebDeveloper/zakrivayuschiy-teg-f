@@ -139,7 +139,7 @@ $mix-blend-color: var(--mix-blend-color, #fff);
 
 .main {
   display: grid;
-  gap: 54px;
+  gap: 56px;
   margin-bottom: 54px;
   margin: 104px 0;
 }
@@ -148,15 +148,30 @@ $mix-blend-color: var(--mix-blend-color, #fff);
   outline: 2px solid $border-color;
   background-color: $page-background;
 
+  @media (width < 700px) {
+    outline: none;
+    border: 2px solid $border-color;
+  }
+
   &__title {
     padding: 4px 10px;  
     font-variation-settings: $font-weight-title;
     font-size: 18px;
   }
 
-  @media (width < 700px) {
-    outline: none;
-    border: 2px solid $border-color;
+  &__text {
+    font-size: 18px;
+    line-height: 21px; /* 116.667% */
+    &:not(:first-of-type){
+      margin-top: 2px;
+    }
+    
+    &-container {
+      display: grid;
+      gap: 25px;
+      padding: 25px;
+      outline: 2px solid var(--border-color, #000);
+    }
   }
 }
 
@@ -171,20 +186,6 @@ $mix-blend-color: var(--mix-blend-color, #fff);
     object-fit: cover;
     object-position: center;
     aspect-ratio: 1 / 1;
-  }
-
-  &__text {
-    font-size: 18px;
-    line-height: 21px; /* 116.667% */
-    &:not(:first-of-type){
-      margin-top: 2px;
-    }
-    
-    &-container {
-      display: grid;
-      gap: 25px;
-      padding: 25px;
-    }
   }
 }
 
